@@ -1,12 +1,29 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
   "compilerOptions": {
+    "outDir": "out",
+    "module": "commonjs",
+    "target": "es6",
+    "moduleResolution": "node",
+    "allowJs": false,
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "out/**"
+  ],
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
 
   "references": [
     {
